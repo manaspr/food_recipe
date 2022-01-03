@@ -105,7 +105,19 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         appBar: AppBar(
-          backgroundColor: Colors.lightGreen,
+          // backgroundColor: Colors.lightGreen,
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.bottomLeft,
+                end: Alignment.topRight,
+                colors: [
+                  Colors.greenAccent,
+                  Colors.lightGreen,
+                ],
+              ),
+            ),
+          ),
           title: Padding(
             padding: const EdgeInsets.only(right: 35),
             child: Row(
@@ -129,34 +141,46 @@ class _HomePageState extends State<HomePage> {
         ),
         bottomNavigationBar: BottomAppBar(
           color: Colors.lightGreen,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton(
-                icon: const Icon(
-                  Icons.restaurant_menu,
-                  color: Colors.white,
-                  size: 30,
-                ),
-                onPressed: () {},
+          child: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  Colors.greenAccent,
+                  Colors.lightGreen,
+                ],
               ),
-              IconButton(
-                icon: const Icon(
-                  Icons.home,
-                  color: Colors.white,
-                  size: 30,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(
+                  icon: const Icon(
+                    Icons.restaurant_menu,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                  onPressed: () {},
                 ),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: const Icon(
-                  Icons.add_ic_call_sharp,
-                  color: Colors.white,
-                  size: 30,
+                IconButton(
+                  icon: const Icon(
+                    Icons.home,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                  onPressed: () {},
                 ),
-                onPressed: () {},
-              ),
-            ],
+                IconButton(
+                  icon: const Icon(
+                    Icons.add_ic_call_sharp,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                  onPressed: () {},
+                ),
+              ],
+            ),
           ),
         ),
         body: _isLoading
